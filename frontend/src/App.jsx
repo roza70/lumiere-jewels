@@ -12,28 +12,41 @@ import Orders from "./pages/Orders";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
+import ShopContextProvider from "./context/ShopContext";
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
     return (
-        <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
-            <ToastContainer />
-            <NavBar />
-            <SearchBar />
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/collection' element={<Collection />} />
-                <Route path='/about' element={<About />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/product/:ProductId' element={<Product />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/place-order' element={<PlaceOrder />} />
-                <Route path='/orders' element={<Orders />} />
-            </Routes>
-            <Footer />
-        </div>
+        <ShopContextProvider>
+            <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-cream min-h-screen relative'>
+                <div className='sparkle-stars'>
+                    {[...Array(25)].map((_, i) => (
+                        <span key={i} className='star' style={{
+                            top: `${Math.random() * 100}%`,
+                            left: `${Math.random() * 100}%`,
+                            animationDelay: `${Math.random() * 3}s`,
+                            fontSize: `${Math.random() * 10 + 8}px`
+                        }}>✦</span>
+                    ))}
+                </div>
+                <ToastContainer />
+                <NavBar />
+                <SearchBar />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/collection' element={<Collection />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/contact' element={<Contact />} />
+                    <Route path='/cart' element={<Cart />} />
+                    <Route path='/product/:ProductId' element={<Product />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/place-order' element={<PlaceOrder />} />
+                    <Route path='/orders' element={<Orders />} />
+                </Routes>
+                <Footer />
+            </div>
+        </ShopContextProvider>
     )
 }
 

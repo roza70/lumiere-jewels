@@ -95,8 +95,7 @@ const ShopContextProvider = (props) => {
     try {
       const response = await axios.get(backendUrl + '/api/product/list')
       if (response.data.success) {
-        const fetchedProducts = Array.isArray(response.data.products) ? response.data.products : []
-        setProducts(fetchedProducts.length > 0 ? fetchedProducts : staticProducts)
+        setProducts(response.data.products)
       } else {
         toast.error(response.data.message)
       }

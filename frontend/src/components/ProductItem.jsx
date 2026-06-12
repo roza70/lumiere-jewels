@@ -9,7 +9,7 @@ const ProductItem = ({id,image,name,price}) => {
   return (
     <Link className="text-gray-700 cursor-pointer" to ={`/product/${id}`} >
         <div className='overflow-hidden'>
-            <img className='transition ease-in-out hover:scale-110' src={image[0]} alt={name} />
+            <img className='transition ease-in-out hover:scale-110' src={image[0] || 'https://placehold.co/300x300?text=No+Image'} alt={name} />
 
         </div>
         <p className='pt-3 pb-1 text-sm'>{name}</p>

@@ -66,14 +66,5 @@ const singleProduct = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
-const updateProduct = async (req, res) => {
-    try {
-        const { id, bestseller } = req.body
-        await productModel.findByIdAndUpdate(id, { bestseller })
-        res.json({ success: true, message: 'Product Updated' })
-    } catch (error) {
-        console.log(error)
-        res.json({ success: false, message: error.message })
-    }
-}
-export { addProduct, listProducts, removeProduct, singleProduct, updateProduct }
+
+export { addProduct, listProducts, removeProduct, singleProduct }

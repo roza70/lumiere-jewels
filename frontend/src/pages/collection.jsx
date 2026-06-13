@@ -76,14 +76,9 @@ const Collection = () => {
         <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>
           <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Rings'} onChange={toggleCategory} /> Rings</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Necklaces'} onChange={toggleCategory} /> Necklaces</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Earrings'} onChange={toggleCategory} /> Earrings</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Bangles'} onChange={toggleCategory} /> Bangles</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Bracelets'} onChange={toggleCategory} /> Bracelets</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Anklets'} onChange={toggleCategory} /> Anklets</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Pendants'} onChange={toggleCategory} /> Pendants</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Bouquets'} onChange={toggleCategory} /> Jewelry Bouquets</label>
+            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Men'} onChange={toggleCategory} /> Men</label>
+            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Women'} onChange={toggleCategory} /> Women</label>
+            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Kids'} onChange={toggleCategory} /> Kids</label>
           </div>
         </div>
 
@@ -91,9 +86,9 @@ const Collection = () => {
         <div className={`border border-gray-300 pl-5 py-3 my-5 ${showFilter ? '' : 'hidden'} sm:block`}>
           <p className='mb-3 text-sm font-medium'>TYPE</p>
           <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Gold'} onChange={toggleSubCategory} /> Gold</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Silver'} onChange={toggleSubCategory} /> Silver</label>
-            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Rose Gold'} onChange={toggleSubCategory} /> Rose Gold</label>
+            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Topwear'} onChange={toggleSubCategory} /> Topwear</label>
+            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Bottomwear'} onChange={toggleSubCategory} /> Bottomwear</label>
+            <label className='flex gap-2 cursor-pointer'><input className='w-3' type='checkbox' value={'Winterwear'} onChange={toggleSubCategory} /> Winterwear</label>
           </div>
         </div>
       </div>
@@ -101,7 +96,7 @@ const Collection = () => {
       {/* Products section */}
       <div className='flex-1'>
         <div className='flex justify-between mb-4 text-base sm:text-2xl'>
-          <Title text1={'ALL'} text2={'TREASURES'} />
+          <Title text1={'ALL'} text2={'COLLECTIONS'} />
           <select onChange={(e) => setSortType(e.target.value)} className='px-2 text-sm border-2 border-gray-300'>
             <option value='relevant'>Sort by: Relevant</option>
             <option value='low-high'>Sort by: Low to High</option>

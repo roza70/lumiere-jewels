@@ -11,8 +11,8 @@ const Add = ({ token }) => {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [price, setPrice] = useState('')
-  const [category, setCategory] = useState('Men')
-  const [subCategory, setSubCategory] = useState('Topwear')
+  const [category, setCategory] = useState('Rings')
+  const [subCategory, setSubCategory] = useState('Gold')
   const [bestseller, setBestseller] = useState(false)
   const [sizes, setSizes] = useState([])
 
@@ -90,17 +90,22 @@ const Add = ({ token }) => {
         <div>
           <p className='mb-2'>Product Category</p>
           <select onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2 border'>
-            <option value='Men'>Men</option>
-            <option value='Women'>Women</option>
-            <option value='Kids'>Kids</option>
+            <option value='Rings'>Rings</option>
+            <option value='Necklaces'>Necklaces</option>
+            <option value='Earrings'>Earrings</option>
+            <option value='Bangles'>Bangles</option>
+            <option value='Bracelets'>Bracelets</option>
+            <option value='Anklets'>Anklets</option>
+            <option value='Pendants'>Pendants</option>
+            <option value='Bouquets'>Jewelry Bouquets</option>
           </select>
         </div>
         <div>
           <p className='mb-2'>Sub Category</p>
           <select onChange={(e) => setSubCategory(e.target.value)} className='w-full px-3 py-2 border'>
-            <option value='Topwear'>Topwear</option>
-            <option value='Bottomwear'>Bottomwear</option>
-            <option value='Winterwear'>Winterwear</option>
+            <option value='Gold'>Gold</option>
+            <option value='Silver'>Silver</option>
+            <option value='Rose Gold'>Rose Gold</option>
           </select>
         </div>
         <div>
@@ -112,7 +117,7 @@ const Add = ({ token }) => {
       <div>
         <p className='mb-2'>Product Sizes</p>
         <div className='flex gap-3'>
-          {['S', 'M', 'L', 'XL', 'XXL'].map((size) => (
+          {['Gold', 'Silver', 'Rose Gold'].map((size) => (
             <div key={size} onClick={() => setSizes(prev => prev.includes(size) ? prev.filter(s => s !== size) : [...prev, size])}>
               <p className={`${sizes.includes(size) ? 'bg-pink-200' : 'bg-slate-200'} px-3 py-1 cursor-pointer`}>{size}</p>
             </div>

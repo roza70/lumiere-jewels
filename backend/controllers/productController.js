@@ -1,10 +1,9 @@
 import { v2 as cloudinary } from 'cloudinary'
 import productModel from '../models/productModel.js'
 
-// Add product
 const addProduct = async (req, res) => {
     try {
-        const { name, description, price, category, subCategory, sizes, bestseller } = req.body
+        const { name, description, price, category, subCategory, sizes, bestseller, collection } = req.body
         const image1 = req.files.image1 && req.files.image1[0]
         const image2 = req.files.image2 && req.files.image2[0]
         const image3 = req.files.image3 && req.files.image3[0]
@@ -16,14 +15,20 @@ const addProduct = async (req, res) => {
                 return result.secure_url
             })
         )
+
         const productData = {
-            name, description,
-            category, price: Number(price),
-            subCategory, bestseller: bestseller === 'true' ? true : false,
+            name,
+            description,
+            category,
+            price: Number(price),
+            subCategory,
+            bestseller: bestseller === 'true' ? true : false,
             sizes: JSON.parse(sizes),
             image: imagesUrl,
-            date: Date.now()
+            collection: collection ? (Array.isArray(collection) ? collection : [collection]) : ['signature'],
+            date: Date.now(),
         }
+
         const product = new productModel(productData)
         await product.save()
         res.json({ success: true, message: 'Product Added' })
@@ -33,7 +38,6 @@ const addProduct = async (req, res) => {
     }
 }
 
-// List products
 const listProducts = async (req, res) => {
     try {
         const products = await productModel.find({})
@@ -44,7 +48,6 @@ const listProducts = async (req, res) => {
     }
 }
 
-// Remove product
 const removeProduct = async (req, res) => {
     try {
         await productModel.findByIdAndDelete(req.body.id)
@@ -55,7 +58,6 @@ const removeProduct = async (req, res) => {
     }
 }
 
-// Single product
 const singleProduct = async (req, res) => {
     try {
         const { productId } = req.body
@@ -67,4 +69,18 @@ const singleProduct = async (req, res) => {
     }
 }
 
-export { addProduct, listProducts, removeProduct, singleProduct }
+const updateProduct = async (req, res) => {
+    try {
+        const { id, bestseller, collection } = req.body
+        const updateData = {}
+        if (bestseller !== undefined) updateData.bestseller = bestseller
+        if (collection !== undefined) updateData.collection = Array.isArray(collection) ? collection : [collection]
+        await productModel.findByIdAndUpdate(id, updateData)
+        res.json({ success: true, message: 'Product Updated' })
+    } catch (error) {
+        console.log(error)
+        res.json({ success: false, message: error.message })
+    }
+}
+
+export { addProduct, listProducts, removeProduct, singleProduct, updateProduct }

@@ -3,16 +3,18 @@ import Hero from '../components/Hero'
 import LatestCollection from '../components/LatestCollection'
 import BestSeller from '../components/BestSeller'
 import OurPolicy from '../components/OurPolicy'
-import NewsLetterBox from '../components/NewsLetterBox'
+import NewsletterBox from '../components/NewsletterBox'
+import CollectionBanner from '../components/CollectionBanner'
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <LatestCollection />
+      <CollectionBanner />
       <BestSeller />
       <OurPolicy />
-      <NewsLetterBox />
+      <NewsletterBox />
     </div>
   )
 }

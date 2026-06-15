@@ -15,20 +15,15 @@ const addProduct = async (req, res) => {
                 return result.secure_url
             })
         )
-
         const productData = {
-            name,
-            description,
-            category,
-            price: Number(price),
-            subCategory,
-            bestseller: bestseller === 'true' ? true : false,
+            name, description,
+            category, price: Number(price),
+            subCategory, bestseller: bestseller === 'true' ? true : false,
             sizes: JSON.parse(sizes),
-            image: imagesUrl,
             collection: collection ? (Array.isArray(collection) ? collection : [collection]) : ['signature'],
-            date: Date.now(),
+            image: imagesUrl,
+            date: Date.now()
         }
-
         const product = new productModel(productData)
         await product.save()
         res.json({ success: true, message: 'Product Added' })

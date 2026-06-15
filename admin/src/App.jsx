@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Navbar from './components/Navbar'
@@ -27,6 +27,7 @@ const App = () => {
             <Sidebar />
             <div className='w-full mx-4 my-8 text-base text-gray-600'>
               <Routes>
+                <Route path='/' element={<Navigate to='/add' />} />
                 <Route path='/add' element={<Add token={token} />} />
                 <Route path='/list' element={<List token={token} />} />
                 <Route path='/orders' element={<Orders token={token} />} />

@@ -113,6 +113,17 @@ const updateStatus = async (req, res) => {
     }
 }
 
+const removeOrder = async (req, res) => {
+    try {
+        const { orderId } = req.body
+        await orderModel.findByIdAndDelete(orderId)
+        res.json({ success: true, message: 'Order Removed' })
+    } catch (error) {
+        console.log(error)
+        res.json({ success: false, message: error.message })
+    }
+}
+
 const verifyStripe = async (req, res) => {
     const { orderId, success, userId } = req.body
     try {
@@ -140,4 +151,4 @@ const verifyRazorpay = async (req, res) => {
     }
 }
 
-export { placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus, verifyStripe, verifyRazorpay }
+export { placeOrder, placeOrderStripe, placeOrderRazorpay, allOrders, userOrders, updateStatus, removeOrder, verifyStripe, verifyRazorpay }

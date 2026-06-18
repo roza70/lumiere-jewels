@@ -5,7 +5,7 @@ import { ShopContext } from '../context/ShopContext'
 
 const NavBar = () => {
   const [visible, setVisible] = useState(false)
-  const { getCartCount, setShowSearch, setToken, token, setCartItems } = useContext(ShopContext)
+  const { getCartCount, setShowSearch, setToken, token, setCartItems, name } = useContext(ShopContext)
   const navigate = useNavigate()
 
   const logout = () => {
@@ -50,14 +50,20 @@ const NavBar = () => {
         />
         
         <div className='relative group'>
-          <img onClick={() => token ? null : navigate('/login')} src={assets.profile_icon} className='w-5 cursor-pointer' alt='profile' />
+          <div className='relative'>
+            <img onClick={() => token ? null : navigate('/login')} src={assets.profile_icon} className='w-5 cursor-pointer' alt='profile' />
+            {token && <span className='absolute text-xs -top-2 -right-2'>✨</span>}
+          </div>
           {/* Dropdown Menu */}
           {token && 
-          <div className='absolute right-0 hidden pt-4 group-hover:block'>
-            <div className='flex flex-col gap-2 px-5 py-3 text-gray-500 rounded w-36 bg-slate-100'>
-              <p onClick={() => navigate('/profile')} className='cursor-pointer hover:text-black'>My Profile</p>
-              <p onClick={() => navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
-              <p onClick={logout} className='cursor-pointer hover:text-black'>Logout</p>
+          <div className='absolute right-0 z-10 hidden pt-4 group-hover:block'>
+            <div className='flex flex-col gap-1 px-5 py-4 text-gray-600 rounded-lg shadow-lg w-44 bg-[#FDF8F0] border border-[#C9A84C]/30'>
+              <p className='pb-2 mb-2 text-sm border-b border-[#C9A84C]/20 font-display text-charcoal'>
+                Hello, <span className='text-gold'>{name || 'there'}</span> 🌸
+              </p>
+              <p onClick={() => navigate('/profile')} className='py-1 text-sm transition-colors cursor-pointer hover:text-[#C9A84C]'>My Profile</p>
+              <p onClick={() => navigate('/orders')} className='py-1 text-sm transition-colors cursor-pointer hover:text-[#C9A84C]'>Orders</p>
+              <p onClick={logout} className='py-1 text-sm transition-colors cursor-pointer hover:text-[#C9A84C]'>Logout</p>
             </div>
           </div>}
         </div>

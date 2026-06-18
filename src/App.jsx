@@ -1,40 +1,53 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Collection from "./pages/Collection";
-import About from "./pages/About";
-import Cart from "./pages/Cart";
-import Contact from "./pages/Contact";
-import Product from "./pages/Product";
-import Login from "./pages/Login";
-import PlaceOrder from "./pages/PlaceOrder";
-import Orders from "./pages/Orders";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-import SearchBar from "./components/SearchBar";
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { assets } from '../assets/assets'
 
-const App = () => {
-    return (
-        <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
-            <ToastContainer />
-            <NavBar />
-            <SearchBar />
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/collection' element={<Collection />} />
-                <Route path='/about' element={<About />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path='/cart' element={<Cart />} />
-                <Route path='/product/:ProductId' element={<Product />} />
-                <Route path='/login' element={<Login />} />
-                <Route path='/place-order' element={<PlaceOrder />} />
-                <Route path='/orders' element={<Orders />} />
-            </Routes>
-            <Footer />
+const Footer = () => {
+  return (
+    <div>
+      <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm'>
+
+        {/* Left section */}
+        <div>
+          <img src={assets.logo} className='w-32 mb-5' alt='logo' />
+          <p className='w-full text-gray-600 md:w-2/3'>
+            Timeless pieces, crafted with light and grace — Lumière Jewels
+            brings elegance to every moment you cherish.
+          </p>
         </div>
-    )
+
+        {/* Middle section */}
+        <div>
+          <p className='mb-5 text-sm font-medium tracking-[0.2em] text-gray-800 uppercase'>Company</p>
+          <ul className='flex flex-col gap-2 text-gray-600'>
+            <li><Link to='/' className='transition-colors hover:text-[#C9A84C]'>Home</Link></li>
+            <li><Link to='/collection' className='transition-colors hover:text-[#C9A84C]'>Collections</Link></li>
+            <li><Link to='/about' className='transition-colors hover:text-[#C9A84C]'>About Us</Link></li>
+            <li><Link to='/contact' className='transition-colors hover:text-[#C9A84C]'>Contact</Link></li>
+          </ul>
+        </div>
+
+        {/* Right section */}
+        <div>
+          <p className='mb-5 text-sm font-medium tracking-[0.2em] text-gray-800 uppercase'>Get In Touch</p>
+          <ul className='flex flex-col gap-2 text-gray-600'>
+            <li><a href='tel:+880123456789' className='transition-colors hover:text-[#C9A84C]'>+880-123-456-789</a></li>
+            <li><a href='mailto:hello@lumierejewels.com' className='transition-colors hover:text-[#C9A84C]'>hello@lumierejewels.com</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      {/* Bottom bar */}
+      <div>
+        <hr className='border-[#C9A84C]/20' />
+        <p className='py-5 text-sm text-center text-gray-500'>
+          Copyright 2026 &copy; Lumière Jewels — All Rights Reserved.
+        </p>
+      </div>
+
+    </div>
+  )
 }
 
-export default App
+export default Footer

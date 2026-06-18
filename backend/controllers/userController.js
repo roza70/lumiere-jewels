@@ -70,4 +70,19 @@ const adminLogin = async (req, res) => {
     }
 }
 
-export { loginUser, registerUser, adminLogin }
+// Route for getting the logged-in user's profile
+const getUserProfile = async (req, res) => {
+    try {
+        const { userId } = req.body
+        const user = await userModel.findById(userId).select('name email')
+        if (!user) {
+            return res.json({ success: false, message: 'User not found' })
+        }
+        res.json({ success: true, name: user.name, email: user.email })
+    } catch (error) {
+        console.log(error)
+        res.json({ success: false, message: error.message })
+    }
+}
+
+export { loginUser, registerUser, adminLogin, getUserProfile }

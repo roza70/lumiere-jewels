@@ -4,6 +4,8 @@
 
 A full-stack luxury jewellery ecommerce web application built with the MERN stack. Lumière Jewels features a elegant customer-facing storefront, a powerful admin panel, and a complete order management system — designed and developed as a flagship portfolio project.
 
+NOTE:This is a portfolio/demo e-commerce project created for educational purposes. Product images belong to their respective owners and are used as placeholders.
+
 ---
 
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -16,14 +18,53 @@ A full-stack luxury jewellery ecommerce web application built with the MERN stac
 ---
 
 ## ✨ Live Demo
-> 🔗 [lumiere-jewels-store.vercel.app](https://lumiere-jewels-store.vercel.app)
-> 🔗 [Admin Panel](https://lumiere-jewels-admin.vercel.app) _(coming soon)_
+
+> 🔗 [Customer Store](https://lumiere-jewels-store.vercel.app)
+> ⚙️ [Admin Panel](https://lumiere-jewels-wcmr.vercel.app)
+
 
 ---
 
 ## 📸 Screenshots
 
-> _Screenshots coming soon — storefront, admin panel, product pages, order tracking._
+🏠 Homepage — hero + sparkle stars
+<img width="1869" height="800" alt="image" src="https://github.com/user-attachments/assets/c67e8b7c-77db-499e-8da7-4ac8edd517b4" />
+
+💍 Collection page — jewelry grid
+<img width="1835" height="816" alt="image" src="https://github.com/user-attachments/assets/da7c9c82-4576-446d-8884-c78aed8d03b4" />
+
+🛍️ Product page — with Select Color
+<img width="1793" height="821" alt="image" src="https://github.com/user-attachments/assets/eb00327a-d575-4951-9a5a-2686e11ec53b" />
+
+🛒 Cart page
+<img width="1807" height="764" alt="image" src="https://github.com/user-attachments/assets/e5faab0e-3bcf-4836-862e-025560490998" />
+
+📦 My Orders — tracking stepper
+<img width="1817" height="793" alt="image" src="https://github.com/user-attachments/assets/fa798bfa-1403-46fd-bd67-fc2e06c54954" />
+
+🌸 Profile page — "Hello, Rosa"
+<img width="1774" height="767" alt="image" src="https://github.com/user-attachments/assets/619c08c5-95f6-49cb-8fea-2dba4b04c543" />
+
+ℹ️ About page
+<img width="1916" height="819" alt="image" src="https://github.com/user-attachments/assets/7476c8a9-6132-40ae-84ee-c4890b71dfee" />
+
+📞 Contact page
+<img width="1894" height="768" alt="image" src="https://github.com/user-attachments/assets/997accbd-8f40-4a5e-8e8c-34ace62acc6e" />
+
+
+**Admin panel**
+9. ⚙️ Add Items page
+<img width="1836" height="810" alt="image" src="https://github.com/user-attachments/assets/563f227e-66c9-4e66-b5f5-82496d187f37" />
+
+10. 📋 List Items page
+<img width="1813" height="819" alt="image" src="https://github.com/user-attachments/assets/533c4aec-8909-4911-ba22-5bccee69af55" />
+
+11. 📦 Orders page
+    <img width="1877" height="644" alt="image" src="https://github.com/user-attachments/assets/6af4933d-0304-49a5-817f-c0a900b06d1e" />
+
+
+
+
 
 ---
 
@@ -120,21 +161,7 @@ cd backend
 npm install
 ```
 
-Create a `.env` file in `/backend`:
 
-```env
-MONGODB_URI=your_mongodb_atlas_connection_string
-CLOUDINARY_NAME=your_cloudinary_name
-CLOUDINARY_API_KEY=your_cloudinary_api_key
-CLOUDINARY_SECRET_KEY=your_cloudinary_secret
-JWT_SECRET=your_jwt_secret
-ADMIN_EMAIL=your_admin_email
-ADMIN_PASSWORD=your_admin_password
-```
-
-```bash
-npm run server
-```
 
 ### 3. Frontend setup
 
@@ -143,15 +170,7 @@ cd frontend
 npm install
 ```
 
-Create a `.env` file in `/frontend`:
 
-```env
-VITE_BACKEND_URL=http://localhost:4000
-```
-
-```bash
-npm run dev
-```
 
 ### 4. Admin panel setup
 
@@ -160,17 +179,6 @@ cd admin
 npm install
 ```
 
-Create a `.env` file in `/admin`:
-
-```env
-VITE_BACKEND_URL=http://localhost:4000
-```
-
-```bash
-npm run dev
-```
-
----
 
 ## 🌐 Deployment
 
@@ -186,10 +194,10 @@ npm run dev
 ## 👩‍💻 Author
 
 **Tahsin Akter Roza**
-Final-year Software Engineering Student, IUBAT
+Final-year CSE Student, IUBAT
 
 [![GitHub](https://img.shields.io/badge/GitHub-roza70-181717?style=flat&logo=github)](https://github.com/roza70)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/your-linkedin)
+
 
 ---
 
@@ -202,4 +210,4 @@ This project is open source and available under the [MIT License](LICENSE).
 <p align="center">
   Made with ✦ and elegance by Roza
 </p>
-/readME file added
+

@@ -27,28 +27,28 @@ NOTE:This is a portfolio/demo e-commerce project created for educational purpose
 
 ## 📸 Screenshots
 
-🏠 Homepage — hero + sparkle stars
+1.🏠 Homepage — hero + sparkle stars
 <img width="1869" height="800" alt="image" src="https://github.com/user-attachments/assets/c67e8b7c-77db-499e-8da7-4ac8edd517b4" />
 
-💍 Collection page — jewelry grid
+2.💍 Collection page — jewelry grid
 <img width="1835" height="816" alt="image" src="https://github.com/user-attachments/assets/da7c9c82-4576-446d-8884-c78aed8d03b4" />
 
-🛍️ Product page — with Select Color
+3.🛍️ Product page — with Select Color
 <img width="1793" height="821" alt="image" src="https://github.com/user-attachments/assets/eb00327a-d575-4951-9a5a-2686e11ec53b" />
 
-🛒 Cart page
+4.🛒 Cart page
 <img width="1807" height="764" alt="image" src="https://github.com/user-attachments/assets/e5faab0e-3bcf-4836-862e-025560490998" />
 
-📦 My Orders — tracking stepper
+5.📦 My Orders — tracking stepper
 <img width="1817" height="793" alt="image" src="https://github.com/user-attachments/assets/fa798bfa-1403-46fd-bd67-fc2e06c54954" />
 
-🌸 Profile page — "Hello, Rosa"
+6.🌸 Profile page — "Hello, Rosa"
 <img width="1774" height="767" alt="image" src="https://github.com/user-attachments/assets/619c08c5-95f6-49cb-8fea-2dba4b04c543" />
 
-ℹ️ About page
+7.ℹ️ About page
 <img width="1916" height="819" alt="image" src="https://github.com/user-attachments/assets/7476c8a9-6132-40ae-84ee-c4890b71dfee" />
 
-📞 Contact page
+8.📞 Contact page
 <img width="1894" height="768" alt="image" src="https://github.com/user-attachments/assets/997accbd-8f40-4a5e-8e8c-34ace62acc6e" />
 
 

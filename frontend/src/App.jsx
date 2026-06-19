@@ -18,6 +18,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
+    // redeploy-timestamp: 2026-06-19T06:52:59Z
+
     return (
         <ShopContextProvider>
             <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] bg-cream min-h-screen relative'>

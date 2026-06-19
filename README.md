@@ -16,8 +16,7 @@ A full-stack luxury jewellery ecommerce web application built with the MERN stac
 ---
 
 ## ✨ Live Demo
-
-> 🔗 [lumiere-jewels.vercel.app](https://lumiere-jewels.vercel.app) _(coming soon)_
+> 🔗 [lumiere-jewels-store.vercel.app](https://lumiere-jewels-store.vercel.app)
 > 🔗 [Admin Panel](https://lumiere-jewels-admin.vercel.app) _(coming soon)_
 
 ---
